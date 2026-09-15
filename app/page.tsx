@@ -5,6 +5,7 @@ import { auth, db } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation"; // ใช้สำหรับนำทางใน App Router [5]
+import Link from "next/link";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -62,6 +63,17 @@ export default function LoginPage() {
         )}
 
         <form onSubmit={handleLogin} className="space-y-4">
+          <div className="mt-4 text-center">
+  <p className="text-sm text-gray-600">
+    ยังไม่มีบัญชี?
+    <Link
+      href="/signup"
+      className="ml-1 text-blue-600 hover:underline font-medium"
+    >
+      สมัครสมาชิก
+    </Link>
+  </p>
+</div>
           <div>
             <label className="block text-sm font-medium text-gray-700">อีเมล</label>
             <input
