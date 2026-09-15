@@ -61,7 +61,7 @@ export default function StudentPage() {
           {announcements.map((item: any) => (
             <div key={item.id} className="p-6 bg-white rounded-lg shadow border border-green-100">
               <h2 className="text-xl font-semibold text-gray-800">{item.title}</h2>
-              <p className="text-gray-600 mt-2">{item.message}</p>
+              <p className="text-gray-600 mt-2">{item.body}</p>
               <div className="text-xs text-gray-400 mt-4 text-right">Sent: {item.date}</div>
             </div>
           ))}
